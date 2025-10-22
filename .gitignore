@@ -1,0 +1,80 @@
+# Dependencies
+node_modules/
+/.pnp
+.pnp.js
+
+# Testing
+/coverage
+
+# Next.js
+/.next/
+/out/
+
+# Production
+/build
+
+# Misc
+.DS_Store
+*.pem
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local env files
+.env*.local
+.env
+
+# Vercel
+.vercel
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Ruby/Rails
+/backend/*.rbc
+/backend/capybara-*.html
+/backend/.rspec
+/backend/db/*.sqlite3
+/backend/db/*.sqlite3-journal
+/backend/db/*.sqlite3-[0-9]*
+/backend/public/system
+/backend/coverage/
+/backend/spec/tmp
+/backend/*.orig
+/backend/rerun.txt
+/backend/pickle-email-*.html
+
+# Ignore all logfiles and tempfiles
+/backend/log/*
+/backend/tmp/*
+!/backend/log/.keep
+!/backend/tmp/.keep
+
+# Environment files
+/backend/.env
+/backend/.env.*
+
+# Configuration files
+/backend/config/*.key
+
+# Storage
+/backend/storage/*
+!/backend/storage/.keep
+/backend/tmp/storage/*
+!/backend/tmp/storage/
+!/backend/tmp/storage/.keep
+
+# Pidfiles
+/backend/tmp/pids/*
+!/backend/tmp/pids/
+!/backend/tmp/pids/.keep
+
+# Bundler
+/backend/.bundle
+/backend/vendor/bundle
+
+# Mac
+.DS_Store
