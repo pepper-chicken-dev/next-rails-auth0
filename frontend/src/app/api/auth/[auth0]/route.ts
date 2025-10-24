@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from 'next/server';
 const auth0Domain = process.env.AUTH0_DOMAIN!;
 const auth0ClientId = process.env.AUTH0_CLIENT_ID!;
 const auth0ClientSecret = process.env.AUTH0_CLIENT_SECRET!;
+const auth0Audience = process.env.AUTH0_AUDIENCE || process.env.NEXT_PUBLIC_AUTH0_AUDIENCE;
 const baseUrl = process.env.AUTH0_BASE_URL || 'http://localhost:3000';
 
 export async function GET(
@@ -17,7 +18,8 @@ export async function GET(
       `response_type=code&` +
       `client_id=${auth0ClientId}&` +
       `redirect_uri=${encodeURIComponent(redirectUri)}&` +
-      `scope=openid profile email`;
+      `scope=openid profile email&` +
+      `audience=${encodeURIComponent(auth0Audience || '')}`;
     
     return NextResponse.redirect(authUrl);
   }
@@ -50,6 +52,7 @@ export async function GET(
           client_secret: auth0ClientSecret,
           code,
           redirect_uri: `${baseUrl}/api/auth/callback`,
+          audience: auth0Audience,
         }),
       });
 
